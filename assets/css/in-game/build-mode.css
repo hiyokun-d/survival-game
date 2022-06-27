@@ -1,0 +1,71 @@
+#build-mode {
+    border: 1px solid black;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0px;
+    border-radius: 10px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    background-color: rgb(177, 228, 126);
+    transition: background-color 0.5s ease-in-out, box-shadow 0.3s ease, border-top-right-radius 0.5s linear, border-bottom-right-radius 0.5s linear, transform 0.7s ease, font-size 0.5s ease, opacity 0.5s;
+}
+
+#build-mode p {
+    text-align: center;
+    font-weight: bold;
+    color: rgb(102, 101, 24);
+    transition: transform 0.5s cubic-bezier(0.54,-0.07, 0.65, 0.93);
+}
+
+#build-mode:hover {
+    background-color: rgb(219, 246, 191);
+    box-shadow: 0 0 10px black;
+    transform: scale(1.1) translateY(3px);
+    font-size: 20px;
+}
+
+#build-mode.off:hover p {
+        animation: wiggle-text 0.5s infinite alternate;
+}
+
+#build-mode:active {
+    transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    transform: scale(0.9) translateY(0px) translateX(0px);
+    background-color: rgb(86, 111, 61);
+}
+
+#build-mode.off:active p {
+    animation: rotate-text 1s ease-in-out infinite;
+}
+
+@keyframes rotate-text {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes wiggle-text {
+        0% {
+            /* make it stretchy */
+            transform: rotate(10deg) translateY(0px) skewY(30deg) skewX(0deg);
+        }
+
+        50% {
+            transform: rotate(-10deg) translateY(-10px) skewY(0deg) skewX(30deg);
+        }
+
+        100% {
+            transform: rotate(10deg) translateY(0px) skewY(30deg) skewX(0deg);
+        }
+}

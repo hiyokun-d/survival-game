@@ -1,0 +1,102 @@
+#inventory-display {
+	position: absolute;
+	bottom: 1px;
+	width: 200px;
+	height: 60px;
+	max-width: 50em;
+	border: 1px solid black;
+	left: 500px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: linear-gradient(to bottom, #f3975a74, rgb(246, 166, 101));
+	border-radius: 5px;
+	overflow: hidden;
+	opacity: 1;
+	/* transform: translateY(80px); */
+	transition: background-color 0.5s ease-in-out, box-shadow 0.3s ease,
+		transform 0.7s ease, font-size 0.5s ease, bottom 0.5s ease, left 0.5s ease,
+		width 0.5s ease, height 0.5s ease, opacity 0.2s ease-in;
+}
+
+#inventory-display > #inventory-display-grid {
+	display: grid;
+	grid-template-columns: repeat(5, 1px);
+	grid-gap: 10px;
+	transform: translateX(-40px);
+	transition: all 1s ease-in-out;
+}
+
+#inventory-display > #inventory-display-grid > .inventory-display-collumn {
+	transition: all 0.5s ease-in-out;
+	background-color: rgb(112, 112, 112);
+	width: 60px;
+	height: 50px;
+	text-align: center;
+	line-height: 10px;
+	border: 3px solid;
+	border-top-color: #ffb686;
+	border-left-color: #f77722;
+	border-right-color: #f87a26;
+	border-bottom-color: #fcc5a1;
+	border-radius: 5px;
+	text-overflow: ellipsis;
+}
+
+#inventory-display > #inventory-display-grid > .inventory-display-collumn img {
+	width: 25px;
+	height: 25px;
+	image-resolution: from-image;
+	display: block;
+	word-wrap: break-word;
+}
+
+#inventory-display
+	> #inventory-display-grid
+	> .inventory-display-collumn.choosen {
+	background-color: #ffb686;
+	border-top-color: #f3975a;
+	z-index: 1;
+	transform: translateX(40px) scale(1.1);
+	color: rgb(113, 112, 112);
+	text-shadow: 0px 0px 5px rgb(255, 255, 255);
+}
+
+#inventory-display:hover
+	> #inventory-display-grid
+	> .inventory-display-collumn.choosen {
+	transform: translateX(0px);
+}
+
+#inventory-display:hover {
+	width: 400px;
+	left: 400px;
+
+	transform: translateX(-30px);
+}
+
+#inventory-display
+	> #inventory-display-grid
+	> .inventory-display-collumn:hover {
+	background-color: rgba(44, 44, 44, 0.74);
+	color: rgb(255, 255, 255);
+	border-color: #858585;
+	border-width: 2px;
+	border-radius: 10px;
+}
+
+#inventory-display
+	> #inventory-display-grid
+	> .inventory-display-collumn.choosen:hover {
+	color: black;
+	background-color: #f9e1d1;
+	transition: color 0.2s ease-out, background-color 0.2s ease-out,
+		transform 0.5s, border 0.5s ease-in-out, border-radius 0.2s ease-in-out;
+	transform: translateX(0px);
+}
+
+#inventory-display:hover > #inventory-display-grid {
+	grid-gap: 80px;
+	transform: translateX(-10%);
+}

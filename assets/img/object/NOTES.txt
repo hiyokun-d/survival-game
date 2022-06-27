@@ -1,0 +1,2 @@
+if you wan't to change any icon i really recommend you to use 16 x 16 pixels images by default. but if
+you want to change it, you can use any size image. thank you :)

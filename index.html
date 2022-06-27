@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>survival game</title>
+		<link rel="stylesheet" href="main.css" />
+		<link rel="stylesheet" href="assets/css/in-game/inventory.css" />
+		<link rel="stylesheet" href="assets/css/in-game/build-mode.css" />
+		<link rel="stylesheet" href="assets/css/in-game/inventory-display.css" />
+		<link
+			rel="shortcut icon"
+			href="assets/img/icon/html/favicon.ico"
+			type="image/x-icon"
+		/>
+	</head>
+	<body>
+		<div class="main-game">
+			<div id="build-mode" class="off" title="BUILD BUTTON">
+				<p>🛠</p>
+			</div>
+
+			<div id="inventory-display">
+				<div id="inventory-display-grid">
+					<div class="inventory-display-collumn choosen"></div>
+					<div class="inventory-display-collumn"></div>
+					<div class="inventory-display-collumn"></div>
+					<div class="inventory-display-collumn"></div>
+					<div class="inventory-display-collumn"></div>
+				</div>
+			</div>
+
+			<div id="inventory-container">
+				<div class="inventory-collumn"></div>
+				<div class="inventory-collumn"></div>
+				<div class="inventory-collumn"></div>
+				<div class="inventory-collumn"></div>
+				<div class="inventory-collumn"></div>
+				<div class="inventory-collumn"></div>
+				<div class="inventory-collumn"></div>
+				<div class="inventory-collumn"></div>
+				<div class="inventory-collumn"></div>
+				<div class="inventory-collumn"></div>
+				<div class="inventory-collumn"></div>
+				<div class="inventory-collumn"></div>
+				<div class="inventory-collumn"></div>
+				<div class="inventory-collumn"></div>
+				<div class="inventory-collumn"></div>
+				<div class="inventory-collumn"></div>
+				<div class="inventory-collumn"></div>
+				<div class="inventory-collumn"></div>
+				<div class="inventory-collumn"></div>
+				<div class="inventory-collumn"></div>
+			</div>
+
+			<!-- game -->
+			<canvas id="canvas"></canvas>
+			<!-- end of game -->
+		</div>
+
+		
+		<!-- object -->
+		<script src="script/object/player.js"></script>
+		<!-- <script src="script/object/tree.js"></script> -->
+		<script src="script/object/Block.js"></script>
+		<!-- <script src="script/object/stone.js"></script> -->
+		
+		<!-- config -->
+		<script src="config/EventkeyList.js"></script>
+		<script src="config/html-element.js"></script>
+		<script src="config/gameplay.js"></script>
+		<script src="config/item-list.js"></script>
+
+		<!-- event -->
+		<script src="script/event/player_event.js"></script>
+		<script src="script/event/mouse-position.js"></script>
+		<script src="script/event/inventory-drag.js"></script>
+		<script src="script/event/window-resize.js"></script>
+		<script src="script/event/inventory-check-animation.js"></script>
+		<script src="script/event/build-mode.js"></script>
+		<script src="script/event/inventory-display.js"></script>	
+		<script src="script/event/hover-element.js"></script>	
+
+		<!-- function -->
+		<script src="script/function/inventorySystem.js"></script>
+		<script src="script/function/spawner.js"></script>
+		<script src="script/function/spawn-block.js"></script>
+		<script src="script/function/break-block.js"></script>
+		<script src="script/function/block-collide-each-other.js"></script>
+		
+		<!-- script -->
+		<script src="script/script.js"></script>
+		<script src="script/function/put-block.js"></script>
+
+		<!-- main script -->
+		<script src="script/function/call-function.js"></script>
+		
+	</body>
+
+	<script src="script/event/detect-devTools.js"></script>
+</html>
