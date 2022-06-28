@@ -19,9 +19,9 @@ class Block {
 	}) {
 		this.showCollider = showCollider;
 		this.showImage = showImage;
-		this.add = add
-		this.type = type
-		this.id = id
+		this.add = add;
+		this.type = type;
+		this.id = id;
 		this.x = x;
 		this.y = y;
 		this.width = width;
@@ -31,6 +31,7 @@ class Block {
 		this.isBreaking = isBreaking;
 		this.health_back_default = health_back_default;
 		this.image = image;
+		this.imageSrc = new Image();
 	}
 
 	draw() {
@@ -38,11 +39,13 @@ class Block {
 			ctx.fillStyle = this.color;
 			ctx.fillRect(this.x, this.y, this.width, this.height);
 		}
+	}
 
-		let image = new Image()
-		if (this.showImage && this.image != "" && typeof image != "undefined") {
-			image.src = this.image
-			ctx.drawImage(image, this.x, this.y, this.width, this.height);
+	imageDraw() {
+		
+		if (this.showImage && this.image != "" && typeof this.imageSrc != "undefined") {
+			this.imageSrc.src = this.image;
+			ctx.drawImage(this.imageSrc, this.x, this.y, this.width, this.height);
 		}
 	}
 
@@ -65,5 +68,16 @@ class Block {
 		ctx.fillText(`${Math.floor(this.health)}`, player.x, player.y);
 
 		// console.log(`%c tree health: ${this.health}`, "color:red; font-size:20px");
+	}
+
+	collide(somethings) {
+		if(somethings.x < this.x + this.width &&
+			somethings.x + somethings.width > this.x &&
+			somethings.y < this.y + this.height &&
+			somethings.y + somethings.height > this.y) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 }

@@ -4,6 +4,7 @@ let player = new Player({
 	y: 100,
 	showCollider: false,
 	showImage: true,
+
 	spriteSheet: {
 		config: {
 			speed: {
@@ -92,7 +93,7 @@ let player = new Player({
 
 	stamina_regen: 0.5,
 	stamina_Position: {
-		Follow_player: false,
+		Follow_player: false, //*default
 		Sides: {
 			top_Left: true,
 			top_Right: false,

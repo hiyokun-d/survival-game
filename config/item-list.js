@@ -23,6 +23,7 @@ let items = [
 					height: 20,
 					color: "brown",
 					health: items[0].health,
+					image: `${items[0].icon}`,
 				})
 			);
 		},
@@ -48,6 +49,7 @@ let items = [
 					height: 20,
 					color: "gray",
 					health: items[1].health,
+					image: `${items[1].icon}`,
 				})
 			);
 		},

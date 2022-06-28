@@ -165,7 +165,7 @@ class Player {
 
 		this.collums_value = this.spriteSheet.config.collumns_value.idle.normal;
 		this.timeCollums = this.spriteSheet.config.speed.whileIdle;
-		
+		this.spriteImage = new Image();
 	}
 
 	draw(ctx) {
@@ -197,7 +197,6 @@ class Player {
 	}
 
 	drawSpriteSheet() {
-		let spriteImage = new Image();
 		this.position =Math.floor(this.gameFrame / this.timeCollums) % this.collums_value;
 		this.collums = this.position * this.spriteSheet.config.size.width;
 
@@ -207,31 +206,31 @@ class Player {
 			!this.move.top &&
 			!this.move.bottom
 		) {
-			spriteImage.src = this.spriteSheet.idle.normal;
+			this.spriteImage.src = this.spriteSheet.idle.normal;
 			this.collums_value = this.spriteSheet.config.collumns_value.idle.normal;
 			this.timeCollums = this.spriteSheet.config.speed.whileIdle;
 		}
 		
 		if (this.move.left) {
-			spriteImage.src = this.spriteSheet.walk.left;
+			this.spriteImage.src = this.spriteSheet.walk.left;
 			this.collums_value = this.spriteSheet.config.collumns_value.walk.left;
 			this.timeCollums = this.spriteSheet.config.speed.whileWalking;
 		}
 
 		if (this.move.right) {
-			spriteImage.src = this.spriteSheet.walk.right;
+			this.spriteImage.src = this.spriteSheet.walk.right;
 			this.collums_value = this.spriteSheet.config.collumns_value.walk.right;
 			this.timeCollums = this.spriteSheet.config.speed.whileWalking;
 		}
 
 		if (this.move.top) {
-			spriteImage.src = this.spriteSheet.walk.up;
+			this.spriteImage.src = this.spriteSheet.walk.up;
 			this.collums_value = this.spriteSheet.config.collumns_value.walk.up;
 			this.timeCollums = this.spriteSheet.config.speed.whileWalking;
 		}
 
 		if (this.move.bottom) {
-			spriteImage.src = this.spriteSheet.walk.down
+			this.spriteImage.src = this.spriteSheet.walk.down
 			this.collums_value = this.spriteSheet.config.collumns_value.walk.down;
 			this.timeCollums = this.spriteSheet.config.speed.whileWalking;
 		}
@@ -242,7 +241,7 @@ class Player {
 		ctx.imageSmoothingEnabled = true;
 
 			ctx.drawImage(
-				spriteImage,
+				this.spriteImage,
 				this.collums,
 				0,
 				this.spriteSheet.config.size.width,
