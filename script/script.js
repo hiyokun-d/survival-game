@@ -1,6 +1,4 @@
 function game() {
-	ctx.clearRect(0, 0, canvas.width, canvas.height);
-
 	//inventory display
 	if (player.build_mode) {
 		inventory_display.style.transform = "translateY(0px)";
@@ -43,15 +41,13 @@ function game() {
 	} else {
 		player.build_mode = false;
 		build_mode.style.transform = "translateX(60px)";
-		build_mode_text.innerHTML = "🛠";
 	}
+		player.build_mode
+			? (build_mode_text.innerText = "❌")
+			: (build_mode_text.innerText = "🛠");
 	/* end of build mode */
-
+	
 	player.draw(ctx);
 	player.moving();
 	player.Stamina_Mechanism();
-
-	block_spawner(0.1, 150);
-
-	requestAnimationFrame(game);
 }

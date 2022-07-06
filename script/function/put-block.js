@@ -28,6 +28,5 @@ function putBlock() {
 			});
 		}
 	});
-	requestAnimationFrame(putBlock);
 }
 

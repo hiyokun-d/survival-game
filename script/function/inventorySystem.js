@@ -31,9 +31,8 @@ function inventorySystem() {
 	} else {
 		player.move.canMove = true;
 		inventory_container.style.animation =
-			"close-up 0.5s ease-in-out forwards 0s 1 normal";
+			"close-up 1s cubic-bezier(1, -0.7, 0.55, 0.9) forwards 0s 1 normal";
 	}
 
-	requestAnimationFrame(inventorySystem);
 }
 

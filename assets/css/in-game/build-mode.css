@@ -10,7 +10,7 @@
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     background-color: rgb(177, 228, 126);
-    transition: background-color 0.5s ease-in-out, box-shadow 0.3s ease, border-top-right-radius 0.5s linear, border-bottom-right-radius 0.5s linear, transform 0.7s ease, font-size 0.5s ease, opacity 0.5s;
+    transition: background-color 0.5s ease-in-out, box-shadow 0.3s ease, border-top-right-radius 0.5s linear, border-bottom-right-radius 0.5s linear, transform 0.7s cubic-bezier(1,-1.42, 0.1, 1.92), font-size 0.5s ease, opacity 0.5s;
 }
 
 #build-mode p {

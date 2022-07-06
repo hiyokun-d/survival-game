@@ -1,5 +1,4 @@
 function break_block() {
-	requestAnimationFrame(break_block);
 
 	block_array.forEach(function (block, index) {
 		if (block.isBreaking) {

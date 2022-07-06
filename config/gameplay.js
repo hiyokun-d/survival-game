@@ -68,7 +68,7 @@ let player = new Player({
 	cannot: {
 		through: {
 			window: true,
-			collision: true,
+			collision: false, //!it's have a bug and i'll fix it later (if i can) but now just call it a features
 		},
 		Run_While_RegenStamina: false,
 		move_while_open_inventory: true,
@@ -119,5 +119,6 @@ let mouse = {
 
 let placeBlock_array = [];
 let block_array = [];
+let grass_array = [];
 
 let developerMode = true;

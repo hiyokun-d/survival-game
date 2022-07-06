@@ -32,6 +32,21 @@ function block_collide_each_other() {
 					block_array[i].y = block.y + block.height + 51;
 				}
 			}
+
+			// if it's collide with grass
+			grass_array.forEach((grass, index) => {
+				if (block_array[i].collide(grass)) {
+					if (block_array[i].x < grass.x) {
+						block_array[i].x = grass.x - block_array[i].width - 51;
+					} else if (block_array[i].x > grass.x) {
+						block_array[i].x = grass.x + grass.width + 51;
+					} else if (block_array[i].y < grass.y) {
+						block_array[i].y = grass.y - block_array[i].height - 51;
+					} else if (block_array[i].y > grass.y) {
+						block_array[i].y = grass.y + grass.height + 51;
+					}
+				}
+			})
 		});
 	}
 
@@ -57,7 +72,5 @@ function block_collide_each_other() {
 		}
 	}
 
-	requestAnimationFrame(block_collide_each_other);
 }
 
-block_collide_each_other();
